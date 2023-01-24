@@ -1,8 +1,8 @@
-# Finance-related papers from various AI conferences 세 줄 요약
+# 금융 및 시계열 관련 인공지능 학회 논문 세 줄 요약
 
 > Query: Finance, Investment, Trading, Pricing, Valuation, Time Series, Time-series
 
-## AAAI '22
+### AAAI '22
 
 - CATN: Cross Attentive Tree-Aware Network for Multivariate Time Series Forecasting ([paper](https://ojs.aaai.org/index.php/AAAI/article/view/20320))
   - Inter-series correlation과 intra-series temporal pattern을 학습하는 모델(CATN)을 제안함
