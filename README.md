@@ -1,6 +1,6 @@
 # 금융 및 시계열 관련 인공지능 학회 논문 세 줄 요약
 
-> Query: Finance, Investment, Trading, Pricing, Valuation, Time Series, Time-series
+> Query: Finance, Investment, Trading, Pricing, Valuation, Portfolio, Time Series, Time-series
 
 ### AAAI '22
 
@@ -53,6 +53,9 @@
   - Stochastic stock data를 이용한 stock representation 학습은 excessive modelling, stock data와 relevant factor의 correlating은 data uncertainty 문제가 있음
   - Macro-level과 sector-level 또는 micro-level의 hierarchical coupling을 통해 stock representation을 학습하는 모델(Co-CPC)를 제안함
   - Sector와 sequential & heterogeneous macroeconomic variables 사이 dependence를 학습하고, SSL을 통해 stock representation을 학습함
+- Deep Portfolio Optimization via Distributional Prediction of Residual Factors ([paper](https://arxiv.org/abs/2012.07245))
+  - 금융 시장의 non-stationariness로 인해 amplitude/time-scale invariance 등 financial inductive bias를 활용하는 것이 중요함
+  - Common market factor에 대한 hedging에 주로 쓰이는 residual factor의 distribution 예측을 기반으로 한 portfolio construction 방식을 제안함
 - Deep Stock Trading: A Hierarchical Reinforcement Learning Framework for Portfolio Optimization and Order Execution ([paper](https://arxiv.org/abs/2012.12620))
   - 기존 RL-based portfolio management는 immediate reallocation을 가정함
   - Trading process의 policy를 long-term profit maximization을 위한 high-level policy와 trading cost minimization을 위한 low-level policy로 계층을 나눈 프레임워크(HRPM)를 제안함
@@ -77,8 +80,8 @@
   - 기존 high-dimensional anomaly detection은 variable 간 관계를 명시적으로 학습하지 않음
   - 관계 구조를 학습하는 GNN과 explainability를 위한 attention weights를 결합한 프레임워크를 제안함
 - Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting ([paper](https://arxiv.org/abs/2012.07436), [code](https://github.com/zhouhaoyi/Informer2020))
-  - 1. Quadratic 시간 복잡도 2) 높은 메모리 사용량 3) encoder-decoder 구조의 근본적인 문제 등으로 인해 transformer를 바로 long sequence time series forecasting에 적용할 수 없음
-  - 1. 복잡도가 낮은 ProbSparse self-attention을 도입하고 2) cascading layer input을 절반으로 줄이고 3) generative style decoder가 한 번에 long sequences를 예측하도록 transformer을 수정한 모델(Informer)을 제안함
+  - Transformer는 1) Quadratic 시간 복잡도 2) 높은 메모리 사용량 3) encoder-decoder 구조의 근본적인 문제 등으로 인해 바로 long sequence time series forecasting에 적용할 수 없음
+  - 1\) 복잡도가 낮은 ProbSparse self-attention을 도입하고 2) cascading layer input을 절반으로 줄이고 3) generative style decoder가 한 번에 long sequences를 예측하도록 수정한 모델(Informer)을 제안함
 - Joint-Label Learning by Dual Augmentation for Time Series Classification ([paper](https://ojs.aaai.org/index.php/AAAI/article/view/17071))
   - 기존 data augmentation 기법은 동일한 source에서 생성된 샘플에 동일한 label을 부여하기 때문에 classification boundary를 찾기 더 어려운 방향으로 data distribution을 확장함
   - 원래 data distribution을 확장하지 않고 time series warping 등의 단순한 변형을 적용한 modified time series에 새로운 label을 부여하여 원래 time series의 classification boundary를 정교하게 하는 기법(JobDA)을 제안함
@@ -99,13 +102,13 @@
 - Reinforcement Learning of Sequential Price Mechanisms ([paper](https://arxiv.org/abs/2010.01180), [code](https://github.com/Livioni/Reinforcement-Learning-of-Sequential-Price-Mechanisms))
   - Sequential price mechanisms를 partially-observable MDP로 보고 RL을 적용함
 - Second Order Techniques for Learning Time-series with Structural Breaks ([paper](https://ojs.aaai.org/index.php/AAAI/article/view/17117))
-  - L2 regularization의 성능은 coordinate 선정과 variable normalization에 의존적이기 때문에 nonstationary time series에 적용할 수 없음
+  - L2 regularization의 성능은 coordinate 선정과 variable normalization에 의존적이기 때문에 non-stationary time series에 적용할 수 없음
   - Invertible linear transformation에 invariance를 보이는 regularization 기법을 제안함
   - Forgetting rate와 regularization coefficient를 adaptively 조정하는 ensemble learning 기법을 제안함
 - ShapeNet: A Shapelet-Neural Network Approach for Multivariate Time Series Classification ([paper](https://ojs.aaai.org/index.php/AAAI/article/view/17018), [code](https://www.comp.hkbu.edu.hk/~csgzli/mtsc/))
   - Univariate time series classification에서 정확도와 interpretability를 높이는 shapelets은 복잡한 multivariate time series classification에서 사용되기 힘듦
   - 다양한 길이의 shapelet candidates를 unified space로 embedding하는 모델(ShapeNet)을 제안함
-  - 1. Anchor와 여러 positive/negative samples 2) positive/negative samples 간 거리를 고려하는 cluster-wise triplet loss로 학습시킴
+  - 1\) Anchor와 여러 positive/negative samples 간 2) positive/negative samples 간 거리를 고려하는 cluster-wise triplet loss로 학습시킴
 - Temporal Latent Auto-Encoder: A Method for Probabilistic Multivariate Time Series Forecasting ([paper](https://arxiv.org/abs/2101.10460))
   - 기존 probabilistic forecasting은 1) simple distribution을 가정하거나 2) cross-series correlation을 무시함
   - Multivariate time series의 nonlinear factorization을 가능하게 하는 auto-encoder 기반 모델을 제안함
